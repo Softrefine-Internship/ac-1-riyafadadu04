@@ -1,0 +1,36 @@
+.cards {
+  display: flex;
+
+  &__box {
+    border-radius: 2rem;
+    &__head{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__title{
+        text-align: center;
+    }
+    &__footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+
+        &__img-box{
+            display: flex;
+
+            &__imgs{
+                display: flex;
+                align-items: center;
+                &__img{
+                    width: 4rem;
+                    height: 4rem;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+  }
+}

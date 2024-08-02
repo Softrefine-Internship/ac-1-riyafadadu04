@@ -1,0 +1,54 @@
+.project {
+  padding: 5rem 6rem;
+  &__head {
+    @include d-flex;
+    &__date {
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+  }
+
+  &__detail {
+    @include d-flex;
+
+    &__ul {
+      @include d-flex;
+      list-style: none;
+
+      &__li {
+        margin-right: 2rem;
+
+        &__heading {
+          font-size: 2rem;
+          font-weight: 800;
+        }
+
+        &__text {
+          font-size: 1.6rem;
+          line-height: 1.8rem;
+          color: $color-grey-dark;
+
+          &::after {
+            content: "";
+            display: inline-block;
+            width: .8rem;
+            height: .8rem;
+            border-radius: 50%;
+            border: solid 1px;
+            margin-left: 1.5rem;
+          }
+        }
+      }
+    }
+
+    &__btn {
+      display: flex;
+      gap: 1.2rem;
+
+      &__icon {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+  }
+}

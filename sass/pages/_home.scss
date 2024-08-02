@@ -1,0 +1,21 @@
+.main-container {
+  display: grid;
+  grid-template-columns: 10rem 1fr 45rem;
+  grid-template-rows: 8rem 1fr;
+  height: 100vh;
+}
+
+.navigation-section {
+  grid-row: 1/-1;
+  grid-column: 1/2;
+}
+
+.header {
+  grid-column: 2/-1;
+}
+
+.project-section {
+  background: $color-white;
+  border-radius: 30px;
+  grid-column: 2/3;
+}
