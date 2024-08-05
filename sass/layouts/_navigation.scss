@@ -6,6 +6,7 @@
   gap: 8rem;
   padding: 2rem;
   position: relative;
+
   @include respond(tab-small) {
     height: auto;
     gap: 0;
@@ -15,16 +16,30 @@
     z-index: 1;
     background: $color-grey-light;
   }
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
 
-  &__logo__line {
-    display: inline-block;
-    height: 0.3rem;
-    width: 5rem;
-    border-radius: 1rem;
-    background: $color-black;
-    @include respond(tab-small) {
-      display: none !important;
-      visibility: hidden;
+    &__line {
+      display: inline-block;
+      height: 0.25rem;
+      width: 5rem;
+      border-radius: 1rem;
+      background: $color-black;
+
+      @include respond(tab-small) {
+        display: none !important;
+        visibility: hidden;
+      }
+
+      &--1 {
+        width: 3rem;
+        height: .28rem;
+      }
     }
   }
 
@@ -36,6 +51,9 @@
       display: flex;
       gap: 2rem;
       align-items: center;
+    }
+    @include respond(phone-medium) {
+      gap: 1.1rem;
     }
 
     &__li {

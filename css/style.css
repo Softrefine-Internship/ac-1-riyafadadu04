@@ -82,7 +82,7 @@ body {
 }
 
 .u-padding-all {
-  padding: 1.2rem 2rem 1.2rem 2rem;
+  padding: 1.2rem 2rem 1.2rem 2.5rem;
 }
 
 .project {
@@ -98,7 +98,7 @@ body {
 }
 @media only screen and (max-width: 48em) {
   .project {
-    margin-bottom: 8rem;
+    margin-bottom: 12rem;
   }
 }
 @media only screen and (max-width: 34.39em) {
@@ -143,18 +143,19 @@ body {
   line-height: 1.8rem;
   color: #454545;
 }
-.project__detail__ul__li__text::after {
+.project__detail__ul__li__text::before {
   content: "";
   display: inline-block;
   width: 0.8rem;
   height: 0.8rem;
   border-radius: 50%;
   border: solid 1px;
-  margin-left: 1.5rem;
+  margin-right: 0.8rem;
 }
 .project__detail__btn {
   display: flex;
   gap: 1.2rem;
+  cursor: pointer;
 }
 @media only screen and (max-width: 34.39em) {
   .project__detail__btn {
@@ -193,6 +194,7 @@ body {
   font-size: 2.2rem;
   color: #151522;
   font-weight: 900;
+  cursor: pointer;
 }
 .cards__box__title {
   display: flex;
@@ -211,6 +213,10 @@ body {
   color: #454545;
   font-size: 1.6rem;
   font-weight: 800;
+  border-bottom: 0.2rem solid #FFFFFF;
+}
+.cards__box__progress--1 {
+  border-bottom: 0.2rem solid #F3F6FD;
 }
 .cards__box__progress__main {
   width: 100%;
@@ -277,6 +283,9 @@ body {
   width: 2.9rem;
   height: 2.9rem;
 }
+.cards__box__footer__img-box__plus-btn:hover {
+  transform: scale(1.1);
+}
 .cards__box__footer__img-box__plus-btn--1 {
   background: #2BC8FF;
 }
@@ -295,6 +304,9 @@ body {
   font-size: 1.4rem;
   font-weight: 700;
   cursor: pointer;
+}
+.cards__box__footer__btn:hover {
+  transform: translateY(-0.2rem);
 }
 .cards__box__footer__btn--1 {
   background: #DBF6FD;
@@ -352,10 +364,12 @@ body {
 .message__header__right-part--search {
   width: 2.5rem;
   height: 2.5rem;
+  cursor: pointer;
 }
 .message__header__right-part--dot {
   font-size: 3rem;
   font-weight: 800;
+  cursor: pointer;
 }
 .message__item {
   list-style: none;
@@ -365,6 +379,7 @@ body {
   align-items: center;
   gap: 1rem;
   padding: 2rem 3rem;
+  cursor: pointer;
 }
 .message__item__attribute:not(:last-child) {
   border-bottom: 0.2rem solid rgba(155, 155, 154, 0.2);
@@ -403,6 +418,162 @@ body {
   font-weight: 800;
 }
 .message__item__container-top__icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.app-message {
+  position: relative;
+  z-index: 500;
+}
+.app-message__button {
+  position: fixed;
+  z-index: 1000;
+  bottom: 10rem;
+  right: 3rem;
+  display: none;
+}
+@media only screen and (max-width: 48em) {
+  .app-message__button {
+    display: block;
+  }
+}
+.app-message__button__link {
+  text-decoration: none;
+  font-size: 4rem;
+  color: #FFFFFF;
+  padding: 1.2rem;
+  border-radius: 50%;
+  background: #91ceeb;
+}
+.app-message__container {
+  position: fixed;
+  top: 6rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+  opacity: 0;
+}
+.app-message__container:target {
+  visibility: visible;
+  opacity: 1;
+}
+.app-message__container__popup {
+  margin: 2rem auto;
+  padding: 5.5rem 2rem 2rem 2rem;
+  background: #F3F6FD;
+  box-shadow: 0 0.2rem 1rem 0 rgba(21, 21, 34, 0.2);
+  border-radius: 5rem;
+  width: 80%;
+  position: relative;
+}
+.app-message__container__popup__close {
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  cursor: pointer;
+  border-radius: 50rem;
+  font-size: 3rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.app-message__container__popup__close--span {
+  border: 0.2rem solid #151522;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+.app-message__container__popup__content {
+  max-height: 80%;
+  overflow: auto;
+}
+.app-message__header {
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #454545;
+  border-bottom: 0.2rem solid rgba(155, 155, 154, 0.2);
+}
+@media only screen and (max-width: 48em) {
+  .app-message__header {
+    padding: 1.2rem 1rem;
+  }
+}
+.app-message__header__right-part {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  gap: 2rem;
+}
+.app-message__header__right-part--search {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.app-message__header__right-part--dot {
+  font-size: 3rem;
+  font-weight: 800;
+}
+.app-message__item {
+  list-style: none;
+  overflow: auto;
+  height: 60vh;
+}
+.app-message__item__attribute {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 3rem;
+}
+@media only screen and (max-width: 48em) {
+  .app-message__item__attribute {
+    padding: 1.2rem 1rem;
+  }
+}
+.app-message__item__attribute:not(:last-child) {
+  border-bottom: 0.2rem solid rgba(155, 155, 154, 0.2);
+}
+.app-message__item__attribute--img {
+  width: 6.5rem;
+  height: 6rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+  overflow: hidden;
+  object-fit: cover;
+}
+.app-message__item__container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  color: #454545;
+}
+.app-message__item__container__detail-msg {
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+.app-message__item__container__msg-date {
+  margin-left: auto;
+  font-size: 1.2rem;
+}
+.app-message__item__container-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.app-message__item__container-top__title {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+.app-message__item__container-top__icon {
   width: 2rem;
   height: 2rem;
 }
@@ -492,9 +663,17 @@ body {
     background: #F3F6FD;
   }
 }
+.navigation__logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
 .navigation__logo__line {
   display: inline-block;
-  height: 0.3rem;
+  height: 0.25rem;
   width: 5rem;
   border-radius: 1rem;
   background: #151522;
@@ -504,6 +683,10 @@ body {
     display: none !important;
     visibility: hidden;
   }
+}
+.navigation__logo__line--1 {
+  width: 3rem;
+  height: 0.28rem;
 }
 .navigation__items {
   list-style: none;
@@ -515,6 +698,11 @@ body {
     display: flex;
     gap: 2rem;
     align-items: center;
+  }
+}
+@media only screen and (max-width: 34.39em) {
+  .navigation__items {
+    gap: 1.1rem;
   }
 }
 .navigation__items__li {
@@ -646,32 +834,78 @@ body {
   border-radius: 50%;
   margin-right: 1rem;
 }
-.header__serch-box-app {
+
+.app-search {
+  margin-left: auto;
+}
+.app-search__label {
   display: none;
 }
 @media only screen and (max-width: 34.39em) {
-  .header__serch-box-app {
+  .app-search__label {
     display: block;
   }
 }
-.header__serch-box-app__lable {
-  width: 5rem;
-  height: 5rem;
-  background: #000;
+.app-search__label__icon {
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
+  background: #151522;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
-.header__serch-box-app__lable__icon {
-  width: 3rem;
-  height: 3rem;
-  color: #ffffff;
+.app-search__label__icon--svg {
+  color: #FFFFFF;
+  width: 2.2rem;
+  height: 2.2rem;
 }
-.header__serch-box-app__form {
+.app-search__box {
   display: none;
   position: absolute;
-  right: 0;
-  width: 140px;
+  background: #FFFFFF;
+  box-shadow: 0 0 2rem rgba(21, 21, 34, 0.5);
+  color: #ffffff;
+  border-radius: 2rem;
+  width: 50%;
+  top: 7rem;
+  left: 25%;
 }
-.header__serch-box-app__input:checked ~ .header__serch-box-app__form {
+.app-search__box__header {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1rem;
+  font-weight: 600;
+}
+.app-search__box__header__icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #151522;
+}
+.app-search__box__header__icon--svg {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+.app-search__box__header__input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+.app-search__box__header__input:focus {
+  outline: none;
+}
+.app-search__input {
+  display: none;
+}
+.app-search__input:checked ~ .app-search__box {
   display: block;
+}
+@media only screen and (max-width: 34.39em) {
+  .app-search__input:checked ~ .app-search__box {
+    display: block;
+  }
 }
 
 .main-container {
