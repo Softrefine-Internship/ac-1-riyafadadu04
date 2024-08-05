@@ -1,7 +1,27 @@
 .project {
   padding: 5rem 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  @include respond(tab-land) {
+    padding: 4rem 5rem;
+  }
+
+  @include respond(tab-small) {
+    margin-bottom: 8rem;
+  }
+  @include respond(phone-medium) {
+    padding: 3rem;
+  }
+
   &__head {
-    @include d-flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    color: $color-black-light;
+
     &__date {
       font-size: 1.8rem;
       font-weight: 600;
@@ -9,14 +29,21 @@
   }
 
   &__detail {
-    @include d-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     &__ul {
-      @include d-flex;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
       list-style: none;
+      gap: 2rem;
 
       &__li {
-        margin-right: 2rem;
+        @include respond(phone-medium) {
+          width: 40%; 
+        }
 
         &__heading {
           font-size: 2rem;
@@ -26,13 +53,13 @@
         &__text {
           font-size: 1.6rem;
           line-height: 1.8rem;
-          color: $color-grey-dark;
+          color: $color-black-light;
 
           &::after {
             content: "";
             display: inline-block;
-            width: .8rem;
-            height: .8rem;
+            width: 0.8rem;
+            height: 0.8rem;
             border-radius: 50%;
             border: solid 1px;
             margin-left: 1.5rem;
@@ -44,6 +71,12 @@
     &__btn {
       display: flex;
       gap: 1.2rem;
+
+      @include respond(phone-medium) {
+        flex-direction: column; 
+        margin: 2rem;
+        gap: 2rem;
+      }
 
       &__icon {
         width: 3rem;

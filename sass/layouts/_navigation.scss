@@ -5,6 +5,16 @@
   align-items: center;
   gap: 8rem;
   padding: 2rem;
+  position: relative;
+  @include respond(tab-small) {
+    height: auto;
+    gap: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    background: $color-grey-light;
+  }
 
   &__logo__line {
     display: inline-block;
@@ -12,12 +22,21 @@
     width: 5rem;
     border-radius: 1rem;
     background: $color-black;
+    @include respond(tab-small) {
+      display: none !important;
+      visibility: hidden;
+    }
   }
 
   &__items {
     list-style: none;
     font-size: 2.4rem;
     color: $color-grey-dark;
+    @include respond(tab-small) {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
 
     &__li {
       width: 5.4rem;
@@ -29,6 +48,10 @@
       cursor: pointer;
       transition: background-color 0.3s;
       border-radius: 50%;
+
+      @include respond(tab-small) {
+        margin-bottom: 0;
+      }
 
       &:hover,
       &--select {

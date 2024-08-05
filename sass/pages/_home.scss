@@ -1,21 +1,44 @@
 .main-container {
   display: grid;
-  grid-template-columns: 10rem 1fr 45rem;
+  grid-template-columns: 10rem 1fr 42rem;
   grid-template-rows: 8rem 1fr;
   height: 100vh;
+
+  @include respond(tab-land-large) {
+    grid-template-columns: 10rem 1fr;
+  }
 }
 
 .navigation-section {
   grid-row: 1/-1;
   grid-column: 1/2;
+  @include respond(tab-small) {
+    grid-row: 4/5;
+    grid-column: 1/-1;
+    background: $color-grey-light;
+  }
 }
 
 .header {
   grid-column: 2/-1;
+  @include respond(tab-small) {
+    grid-column: 1/-1;
+  }
 }
 
 .project-section {
   background: $color-white;
-  border-radius: 30px;
+  border-radius: 3rem;
   grid-column: 2/3;
+  @include respond(tab-small) {
+    grid-column: 1/-1;
+  border-radius: 0;
+  }
+}
+
+.web-message-box {
+  margin-top: 3rem;
+  @include respond(tab-land-large) {
+    grid-column: 2/-1;
+  }
 }

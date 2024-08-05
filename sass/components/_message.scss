@@ -1,0 +1,85 @@
+.message {
+    width: 100%;
+    @include respond(tab-small) {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+      }
+  &__header {
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $color-black-light;
+    border-bottom: 0.2rem solid rgba($color-grey-dark, 0.2);
+    &__right-part {
+      display: flex;
+      align-items: center;
+      height: 3rem;
+      gap: 2rem;
+      &--search {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+      &--dot {
+        font-size: 3rem;
+        font-weight: 800;
+      }
+    }
+  }
+
+  &__item {
+    list-style: none;
+    &__attribute {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 2rem 3rem;
+
+      &:not(:last-child){
+        border-bottom: 0.2rem solid rgba($color-grey-dark, 0.2);
+      }
+      
+      &--img {
+        width: 6.5rem;
+        height: 6rem;
+        border-radius: 50%;
+        margin-right: 1rem;
+        overflow: hidden;
+        object-fit: cover;
+      }
+    }
+    &__container {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      width: 100%;
+      color: $color-black-light;
+
+      &__detail-msg{
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+      }
+
+      &__msg-date{
+        margin-left: auto;
+        font-size: 1.2rem;
+      }
+    }
+
+    &__container-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: .5rem;
+      &__title{
+        font-size: 1.8rem;
+        font-weight: 800;
+      }
+      &__icon {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+}
