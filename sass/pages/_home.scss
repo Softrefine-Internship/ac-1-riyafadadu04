@@ -3,9 +3,10 @@
   grid-template-columns: 10rem 1fr 42rem;
   grid-template-rows: 8rem 1fr;
   height: 100vh;
+  overflow: hidden;
 
   @include respond(tab-land-large) {
-    grid-template-columns: 10rem 1fr;
+    grid-template-columns: 9rem 1.2fr 1.1fr;
   }
 }
 
@@ -28,17 +29,15 @@
 
 .project-section {
   background: $color-white;
-  border-radius: 3rem;
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem;
   grid-column: 2/3;
   @include respond(tab-small) {
     grid-column: 1/-1;
-  border-radius: 0;
+    border-radius: 0;
   }
 }
 
 .web-message-box {
   margin-top: 3rem;
-  @include respond(tab-land-large) {
-    grid-column: 2/-1;
-  }
 }

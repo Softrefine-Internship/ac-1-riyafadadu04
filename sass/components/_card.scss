@@ -1,12 +1,69 @@
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4.5rem;
+  display: grid;
+  padding: 1rem 0.3rem;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 4.5rem;
+  height: 60vh;
+  overflow-y: auto;
+  // position: relative;
+
+  @include respond(tab-land-large) {
+    grid-template-columns: repeat(1, 1fr);
+    height: calc(65vh - 9rem);
+  }
+
+  @include respond(tab-small) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond(phone-medium) {
+    grid-template-columns: repeat(1, 1fr);
+    height: calc(60vh - 9rem);
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   &__box {
     border-radius: 4rem;
-    flex-grow: 1;
-    width: 29rem;
+    height: max-content;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 4.5rem;
+
+    &:hover {
+      transition: all .2s;
+      transform: scale(1.005);
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -1.2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        height: 0.6rem;
+        width: 80%;
+        border-radius: 2rem;
+        background-color: inherit;
+        box-shadow: rgba(99, 99, 99, 0.18) 0px 2px 8px 0px;
+        animation: card-line1 .2s;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -2.1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        height: 0.6rem;
+        width: 70%;
+        border-radius: 2rem;
+        background-color: inherit;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        animation: card-line2 .2s;
+      }
+    }
 
     &__head {
       display: flex;
@@ -45,10 +102,10 @@
       color: $color-black-light;
       font-size: 1.6rem;
       font-weight: 800;
-      border-bottom: .2rem solid $color-white;
+      border-bottom: 0.2rem solid $color-white;
 
-      &--1{
-      border-bottom: .2rem solid $color-grey-light;
+      &--1 {
+        border-bottom: 0.2rem solid $color-grey-light;
       }
 
       &__main {
@@ -121,6 +178,7 @@
           cursor: pointer;
           width: 2.9rem;
           height: 2.9rem;
+          transition: transform 0.2s;
 
           &:hover {
             transform: scale(1.1);
@@ -146,6 +204,11 @@
         font-size: 1.4rem;
         font-weight: 700;
         cursor: pointer;
+        transition: transform 0.2s;
+
+        @include respond(tab-land) {
+          padding: 1rem 2rem;
+        }
 
         &:hover {
           transform: translateY(-0.2rem);

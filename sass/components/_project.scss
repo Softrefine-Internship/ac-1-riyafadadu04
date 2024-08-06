@@ -1,17 +1,18 @@
 .project {
-  padding: 5rem 6rem;
+  padding: 5rem 6rem 0 6rem;
   display: flex;
   flex-direction: column;
+  // overflow: hidden;
   gap: 4rem;
 
   @include respond(tab-land) {
-    padding: 4rem 5rem;
+    padding: 4rem 5rem 2rem 5rem;
   }
 
   @include respond(tab-small) {
     margin-bottom: 12rem;
   }
-  @include respond(phone-medium) {
+  @include respond(phone-small) {
     padding: 3rem;
   }
 
@@ -41,6 +42,15 @@
       gap: 2rem;
 
       &__li {
+
+        @include respond(tab-land-large) {
+          width: 40%; 
+        }
+        
+        @include respond(tab-small) {
+          width: auto;
+        }
+
         @include respond(phone-medium) {
           width: 40%; 
         }
