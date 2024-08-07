@@ -46,7 +46,6 @@
         width: 80%;
         border-radius: 2rem;
         background-color: inherit;
-        box-shadow: rgba(99, 99, 99, 0.18) 0px 2px 8px 0px;
         animation: card-line1 .2s;
       }
       &::before {
@@ -60,7 +59,6 @@
         width: 70%;
         border-radius: 2rem;
         background-color: inherit;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         animation: card-line2 .2s;
       }
     }
@@ -235,6 +233,11 @@
 
     &--1 {
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      &:hover{
+        &::after , &::before{
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+      }
     }
     &--2 {
       background: $color-light-orange;

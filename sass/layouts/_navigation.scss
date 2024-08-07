@@ -24,18 +24,17 @@
     gap: 0.5rem;
     margin-top: 1.5rem;
 
+    @include respond(tab-small) {
+      display: none !important;
+      visibility: hidden;
+    }
+
     &__line {
       display: inline-block;
-      height: .3rem;
+      height: 0.3rem;
       width: 4.5rem;
       border-radius: 1rem;
       background: $color-black;
-
-      @include respond(tab-small) {
-        display: none !important;
-        visibility: hidden;
-      }
-
     }
   }
 
@@ -45,6 +44,8 @@
     color: $color-grey-dark;
     @include respond(tab-small) {
       display: flex;
+      width: 100%;
+      justify-content: space-between;
       gap: 2rem;
       align-items: center;
     }

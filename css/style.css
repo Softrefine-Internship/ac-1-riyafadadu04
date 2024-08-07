@@ -249,7 +249,6 @@ body {
   width: 80%;
   border-radius: 2rem;
   background-color: inherit;
-  box-shadow: rgba(99, 99, 99, 0.18) 0px 2px 8px 0px;
   animation: card-line1 0.2s;
 }
 .cards__box:hover::before {
@@ -263,7 +262,6 @@ body {
   width: 70%;
   border-radius: 2rem;
   background-color: inherit;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   animation: card-line2 0.2s;
 }
 .cards__box__head {
@@ -419,6 +417,9 @@ body {
   background: #FFFFFF;
 }
 .cards__box--1 {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.cards__box--1:hover::after, .cards__box--1:hover::before {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .cards__box--2 {
@@ -775,18 +776,18 @@ body {
   gap: 0.5rem;
   margin-top: 1.5rem;
 }
+@media only screen and (max-width: 48em) {
+  .navigation__logo {
+    display: none !important;
+    visibility: hidden;
+  }
+}
 .navigation__logo__line {
   display: inline-block;
   height: 0.3rem;
   width: 4.5rem;
   border-radius: 1rem;
   background: #151522;
-}
-@media only screen and (max-width: 48em) {
-  .navigation__logo__line {
-    display: none !important;
-    visibility: hidden;
-  }
 }
 .navigation__items {
   list-style: none;
@@ -796,6 +797,8 @@ body {
 @media only screen and (max-width: 48em) {
   .navigation__items {
     display: flex;
+    width: 100%;
+    justify-content: space-between;
     gap: 2rem;
     align-items: center;
   }
@@ -864,7 +867,7 @@ body {
 }
 .header__serch-box__icon {
   width: 2.4rem;
-  height: 2.4rem;
+  height: 2rem;
 }
 @media only screen and (max-width: 34.39em) {
   .header__serch-box__icon {
